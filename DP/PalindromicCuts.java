@@ -103,3 +103,67 @@ public class PalindromicCuts {
 	}
 
 }
+
+
+
+
+
+// import java.util.Scanner;
+
+// public class ZumaGame {
+//     static int[][] dp; // memoization array
+
+//     public static void main(String[] args) {
+//         Scanner scanner = new Scanner(System.in);
+
+//         int n = scanner.nextInt(); // number of gemstones
+//         int[] colors = new int[n]; // array to store the colors of gemstones
+
+//         for (int i = 0; i < n; i++) {
+//             colors[i] = scanner.nextInt();
+//         }
+
+//         dp = new int[n][n]; // initialize the memoization array with -1
+
+//         int minSeconds = calculateMinSeconds(colors, 0, n - 1); // calculate the minimum number of seconds
+
+//         System.out.println(minSeconds);
+
+//         scanner.close();
+//     }
+
+//     private static int calculateMinSeconds(int[] colors, int start, int end) {
+//         if (start > end) {
+//             return 0;
+//         }
+
+//         if (dp[start][end] != 0) {
+//             return dp[start][end];
+//         }
+
+//         // Base case: A single gemstone is always a palindrome
+//         if (start == end) {
+//             dp[start][end] = 1;
+//             return dp[start][end];
+//         }
+
+//         // If the colors at both ends are the same, we can remove the ends and get the result for the inner substring
+//         if (colors[start] == colors[end]) {
+//             if (start + 1 == end) {
+//                 dp[start][end] = 1;
+//             } else {
+//                 dp[start][end] = calculateMinSeconds(colors, start + 1, end - 1);
+//             }
+            
+//         }else{
+// 	  dp[start][end] = end - start + 1; // initialize with the maximum possible value
+	  
+//         // Find the minimum number of seconds by splitting the substring at different positions and taking the minimum
+       
+//           for (int k = start; k < end; k++) {
+//             dp[start][end] = Math.min(dp[start][end], calculateMinSeconds(colors, start, k) + calculateMinSeconds(colors, k + 1, end));
+//           }
+// 	}
+//         return dp[start][end];
+//     }
+// }
