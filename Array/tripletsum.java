@@ -34,27 +34,19 @@ public class tripletsum {
                    
 	             else {
 	            	List<Integer> ans=new ArrayList<Integer>();
-            	 	if(arr[start]==arr[end]) {
-	            		ans.add(curr);
-	            		ans.add(arr[start]);
-	            		ans.add(arr[end]);
-	            		list.add(ans);
-	            		return;
-	            	}
-	            	int elementatstart=arr[start];
-		        	int elementatend=arr[end];
-	            	int tsi=1+start;
-	            	int tei=end-1;
-	            	while( tsi<=tei && arr[tsi]==elementatstart) {
-	            		tsi++;
-	            	}
-	            	while( tei>=tsi && arr[tei]==elementatend) {
-	            		tei--;
-	            	}
-	            	ans.add(curr);
+			ans.add(curr);
             		ans.add(arr[start]);
             		ans.add(arr[end]);
             		list.add(ans);
+	            	int tsi=1+start;
+	            	int tei=end-1;
+	            	while( tsi<=tei && arr[tsi]==arr[start]) {
+	            		tsi++;
+	            	}
+	            	while( tei>=tsi && arr[tei]==arr[end]) {
+	            		tei--;
+	            	}
+	            	
 	            	start=tsi;
 	            	end=tei;
 	             }         
